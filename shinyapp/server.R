@@ -41,18 +41,18 @@ function(input, output, session) {
         ht_list = ht,
         heatmap_id = "H1")
     },
-  suspended=TRUE,
+  # suspended=TRUE,
   # ignoreNULL=FALSE,
-  ignoreInit=TRUE
+  # ignoreInit=TRUE
     
   ) # %>% bindEvent(input$show_H1)
   
   
   ## Residues tab
   
-  # observeEvent(
-  eventReactive(
-    # input$show_H2,
+  observeEvent(
+  # eventReactive(
+    input$show_H2,
   # observe(
     {
       source("Heatmap_aas_server.R", local=T)
@@ -76,8 +76,8 @@ function(input, output, session) {
         click_action = show_scatterplot,
         heatmap_id = "H2")
     },
-    suspended=TRUE,
+    # suspended=TRUE,
     # ignoreNULL=FALSE,
-    ignoreInit=TRUE
+    # ignoreInit=TRUE
   ) # %>% bindEvent(input$show_H2)
 }
